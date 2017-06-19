@@ -10,12 +10,16 @@ import android.util.Log;
 import com.example.administrator.coolweather.db.City;
 import com.example.administrator.coolweather.db.County;
 import com.example.administrator.coolweather.db.Province;
+import com.example.administrator.coolweather.gson.Forecast;
 import com.example.administrator.coolweather.gson.Weather;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 /**
  * 解析和处理服务器返回来的省市县的数据
@@ -103,6 +107,8 @@ public class Utility {
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             //把数组中的json数据转换成String字符串
             String weatherContent = jsonArray.getJSONObject(0).toString();
+
+            Log.d(TAG, "json数据的字符串是:======="+weatherContent);
             //使用Gson解析数据并赋值到Weather实体类里
             return new Gson().fromJson(weatherContent,Weather.class);
         } catch (JSONException e) {
@@ -110,5 +116,24 @@ public class Utility {
         }
         return null;
     }
+
+
+//    public static Weather handleWeatherResponse(String response){
+////        Gson gson = new Gson();
+//        try {
+//            JSONObject jsonObject = new JSONObject(response);
+//            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+//            for(int i = 0;i<jsonArray.length();i++){
+//                JSONObject json = jsonArray.getJSONObject(i);
+//                Weather weather = new Weather();
+//                Log.d(TAG, "json里的数据是:-------"+json);
+//
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
+
 
 }

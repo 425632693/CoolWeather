@@ -7,7 +7,7 @@ package com.example.administrator.coolweather.gson;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * 未来一天的天气信息
+ * 未来几天的天气信息
  */
 public class Forecast {
 

@@ -4,6 +4,8 @@ package com.example.administrator.coolweather.gson;
  * Created by Administrator on 2017/6/16.
  */
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -27,6 +29,7 @@ public class Weather {
     public Suggestion suggestion;
 
     //未来几天的信息(数组)
+    @SerializedName("daily_forecast")
     public List<Forecast> forecastList;
 
 }
