@@ -37,6 +37,9 @@ import okhttp3.Response;
  * Created by Administrator on 2017/6/15.
  */
 
+/**
+ * 获取省市县数据
+ */
 public class ChooseAreaFragment extends Fragment {
     private static final String TAG = "ChooseAreaFragment";
 
@@ -110,6 +113,7 @@ public class ChooseAreaFragment extends Fragment {
                     selectProvince = provinceList.get(position);
                     Log.d(TAG, "当前点击的省是："+selectProvince.getProvinceName()+"----"+selectProvince.getProvinceCode());
                     queryCities();
+                    //判断当前选中的城市级别是市级
                 }else if(currentLevel == LEVEL_CITY){
                     selectCity = cityList.get(position);
                     Log.d(TAG, "当前点击的市是："+selectCity.getCityName()+"======"+selectCity.getCityCode());
@@ -117,11 +121,25 @@ public class ChooseAreaFragment extends Fragment {
                     //如果当前选中的城市级别是县的话,获取数据里的天气id,使用Intent传递给WeatherActivity
                 }else if(currentLevel == LEVEL_COUNTY){
                     String weatherId = countyList.get(position).getWeatherId();
-                    Intent intent = new Intent(getActivity(),WeatherActivity.class);
-                    intent.putExtra("weather_id",weatherId);
-                    startActivity(intent);
-                    //关闭当前Activity
-                    getActivity().finish();
+                    //使用 instanceof 判断当前activity 是否是在MainActivity中,如果在的话直接跳转WeatherActivity.class
+                    if(getActivity() instanceof MainActivity){
+                        Intent intent = new Intent(getActivity(),WeatherActivity.class);
+                        intent.putExtra("weather_id",weatherId);
+                        startActivity(intent);
+                        //关闭当前Activity
+                        getActivity().finish();
+                        /**
+                         * 使用 instanceof 判断当前activity 是否是在WeatherActivity中,
+                         * 如果在的话关闭侧滑,显示下拉刷新进度条,然后请求天气数据
+                         */
+                    }else if(getActivity() instanceof WeatherActivity){
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        //在这里使用Make 'WeatherActivity.drawerLayout' package local
+                        activity.drawerLayout.closeDrawers();
+                        activity.swipeRefresh.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                    }
+
                 }
             }
         });
@@ -191,6 +209,9 @@ public class ChooseAreaFragment extends Fragment {
         }
     }
 
+    /**
+     * 县
+     */
     private void queryCounties(){
         titleText.setText(selectCity.getCityName());
         //当前城市级别是县，有上一级城市可以返回，所以把返回键显示出来

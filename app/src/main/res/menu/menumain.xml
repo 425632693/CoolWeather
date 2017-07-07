@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        showAsAction : 设置ActionBar 的显示
+            属性的值有:
+            1.alaways:这个值会使菜单项一直显示在ActionBar上
+            2.ifRoom:如果有足够的空间,这个值会使菜单显示在ActionBar上
+            3.never:这个值菜单永远不会出现在ActionBar是
+            4.withText:这个值使菜单和它的图标，菜单文本一起显示
+    -->
+    <!--<item
+        android:id="@+id/addCity"
+        android:title="城市设置"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/settings"
+        android:title="设置"
+        app:showAsAction="never"/>-->
+
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义的头部右侧的菜单栏点击布局-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+
+    <Button
+        android:id="@+id/addCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="城市设置"
+        android:background="@color/touming"
+        android:textColor="@color/camera_bottom_press_bg"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        android:background="@color/touming"
+        android:textColor="@color/camera_bottom_press_bg"
+        android:textSize="20sp"/>
+
+</LinearLayout>

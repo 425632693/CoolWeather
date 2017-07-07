@@ -17,9 +17,19 @@ public class Now {
     @SerializedName("cond")
     public More more;//天气情况
 
-    public class  More{
+    @SerializedName("wind")
+    public Feng feng;//风向情况
+
+    public class More{
         @SerializedName("txt")
         public String info;
+    }
+
+    public class Feng{
+        @SerializedName("sc")
+        public String fj;//风力等级
+        @SerializedName("dir")
+        public String fx;//风向
     }
 
     /**

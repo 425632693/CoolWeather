@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:text="空气质量"
+        android:text="风向指标"
         android:textColor="#fff"
         android:textSize="20sp"/>
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp">
 
-        <!--AQI指数-->
+        <!--风向-->
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 android:layout_centerInParent="true">
 
                 <TextView
-                    android:id="@+id/api_text"
+                    android:id="@+id/fx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -48,14 +48,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="AQI指数"
+                    android:text="风向"
                     android:textColor="#fff"/>
 
             </LinearLayout>
 
         </RelativeLayout>
 
-        <!--pm2.5指数-->
+        <!--风力等级-->
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -68,7 +68,7 @@
                 android:layout_centerInParent="true">
 
                 <TextView
-                    android:id="@+id/pm25_text"
+                    android:id="@+id/fj"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="PM2.5指数"
+                    android:text="风力等级"
                     android:textColor="#fff"/>
 
             </LinearLayout>

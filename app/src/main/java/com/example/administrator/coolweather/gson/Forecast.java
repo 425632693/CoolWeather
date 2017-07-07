@@ -19,12 +19,20 @@ public class Forecast {
     @SerializedName("cond")
     public More more;//天气情况
 
+    @SerializedName("wind")
+    public Feng feng;//天气风向
+
 
     public class Temperature{
         public String max;//天气最高温度
-
         public String min;//天气最低温度
     }
+
+    public class Feng{
+        public String sc;//风力等级
+        public String dir;//风向
+    }
+
 
     public class More{
         @SerializedName("txt_d")

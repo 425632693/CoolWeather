@@ -13,7 +13,7 @@
         android:layout_marginLeft="10dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/ic_home"/> 
+        android:background="@drawable/ic_genduo"/>
 
     <!--显示城市名-->
     <TextView
@@ -24,15 +24,13 @@
         android:textColor="#fff"
         android:textSize="20sp"/>
 
-    <!--显示更新时间-->
-    <TextView
-        android:id="@+id/title_update_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
+    <!--头部右侧菜单按钮-->
+    <Button
+        android:id="@+id/title_caidan"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:textColor="#fff"
-        android:textSize="16sp"/>
+        android:background="@drawable/icon_caidan" />
 
 </RelativeLayout>
